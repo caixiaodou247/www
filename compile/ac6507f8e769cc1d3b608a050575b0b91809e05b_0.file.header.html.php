@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-05-08 21:46:44
+<?php /* Smarty version 3.1.24, created on 2016-05-11 01:52:02
          compiled from "C:/wamp5/www/views/header.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:19398572f4344d8d063_79191377%%*/
+/*%%SmartyHeaderCode:440657321fc29ba9f7_81219041%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ac6507f8e769cc1d3b608a050575b0b91809e05b' => 
     array (
       0 => 'C:/wamp5/www/views/header.html',
-      1 => 1462588346,
+      1 => 1462815996,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19398572f4344d8d063_79191377',
+  'nocache_hash' => '440657321fc29ba9f7_81219041',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_572f4345534781_75219279',
+  'unifunc' => 'content_57321fc2e603b3_51221125',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_572f4345534781_75219279')) {
-function content_572f4345534781_75219279 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_57321fc2e603b3_51221125')) {
+function content_57321fc2e603b3_51221125 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '19398572f4344d8d063_79191377';
+$_smarty_tpl->properties['nocache_hash'] = '440657321fc29ba9f7_81219041';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,7 +90,7 @@ $_smarty_tpl->properties['nocache_hash'] = '19398572f4344d8d063_79191377';
             </li>
 
             <li>
-              <a href="index.php?route=member">我的小兜</a>
+              <a href="index.php?route=caidou">我的菜兜</a>
               <b class="head">|</b>
             </li>
 

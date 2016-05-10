@@ -17,7 +17,7 @@
 
 	$row = array_merge($row_Info , $row_Detail);
 
-	$rows_Img = $admin->getImgsByKind($row['productId']);
+	$rows_Img = $admin->getImgsByKind($row['productId'] , "true");
 
 	if($rows_Img){
 		$row['imgRootS'] = $rows_Img['imgRoot'] . "image_460_282/" . $rows_Img['imgName'];
@@ -25,6 +25,9 @@
 		$row['imgRootB'] = $rows_Img['imgRoot'] . 'image_80_80/' . $rows_Img['imgName'];
 		$row['imgRootD'] = $rows_Img['imgRoot'] . 'image_130_130/' . $rows_Img['imgName'];
 	}
+
+	$rows_Img_detail = $admin->getImgsByKind($row['productId'] , "false");
+	var_dump($rows_Img_detail);
 	
 	$rows[] = $row;
 	// var_dump($rows);

@@ -216,12 +216,12 @@ class Admin{
 			return NULL;
 	}	
 
-	function getImgsByKind($id){
+	function getImgsByKind($id , $isHome){
 
 		$img_db = new DB();
 
 		//获取 productimg 表指定Id的有商品的图片信息
-		$sqlImg = "select imgName,imgRoot from productimg where productimg.productId='$id' ";
+		$sqlImg = "select imgName,imgRoot from productimg where productimg.productId='$id' and productimg.isHomeImg='$isHome' ";
 		// echo $sqlImg;
 		$resultImgs = $img_db->fetchAll($sqlImg);
 		// var_dump($resultImgs);exit;
@@ -229,6 +229,7 @@ class Admin{
 			return $resultImgs[0];
 		}
 		if($resultImgs){
+			// var_dump($resultImgs);
 			return $resultImgs;
 		}
 		else{

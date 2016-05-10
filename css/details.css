@@ -917,18 +917,16 @@ ul.ingred1 {
 }
 
 .cxd-scombo .tab-content-groups {
-  margin-left: 30px;
+  margin-left: 38px;
 }
 
-.tab-content-groups .tab-content-pre , .tab-content-groups .tab-content-next {
+/*.tab-content-groups .tab-content-pre , .tab-content-groups .tab-content-next {
   float: left;
   margin-top: 54px;
   background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
-  margin-left: 8px;
-  margin-right: 8px;
 }
-
-.tab-content-pre .a-button , .tab-content-next .a-button  {
+*/
+/*.tab-content-pre .a-button , .tab-content-next .a-button  {
   padding: 0;
   vertical-align: middle;
   border: 1px solid;
@@ -940,7 +938,7 @@ ul.ingred1 {
   border-radius: 3px;
   width: 36px;
   height: 38px;
-}
+}*/
 
 .a-button .a-button-inner {
   background: #eff0f3;
@@ -993,7 +991,7 @@ ul.ingred1 {
 
 .cxd-scombo .tm-combo-item {
   float: left;
-  margin: 10px;
+  margin: 10px 10px 10px 30px;
   position: relative;
   width: 130px;
   height: 170px;

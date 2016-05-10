@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-05-08 22:33:18
+<?php /* Smarty version 3.1.24, created on 2016-05-11 00:48:27
          compiled from "C:/wamp5/www/views/details.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:21783572f4e2e640096_31472735%%*/
+/*%%SmartyHeaderCode:11710573210db3a56a4_16550933%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0036efd446033d5eaf2a9de185bba75ada914cf' => 
     array (
       0 => 'C:/wamp5/www/views/details.html',
-      1 => 1462521502,
+      1 => 1462898905,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21783572f4e2e640096_31472735',
+  'nocache_hash' => '11710573210db3a56a4_16550933',
   'variables' => 
   array (
     'Detail' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_572f4e2e94f263_46000846',
+  'unifunc' => 'content_573210db604536_63864861',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_572f4e2e94f263_46000846')) {
-function content_572f4e2e94f263_46000846 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_573210db604536_63864861')) {
+function content_573210db604536_63864861 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '21783572f4e2e640096_31472735';
+$_smarty_tpl->properties['nocache_hash'] = '11710573210db3a56a4_16550933';
 echo $_smarty_tpl->getSubTemplate ("header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -114,13 +114,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['detail']['last']       = ($_
 " />
                     </a>
 
-                   <!--  <a href="images/img02.jpg" rel="zoom1" rev="images/img02.jpg">
-                        <img class="imgS" src="images/img02s.jpg" />
+                    <a href="images/products/image_600_600/GZ6.jpg" rel="zoom1" rev="images/products/image_460_282/GZ6.jpg">
+                        <img class="imgS" src="images/products/image_80_80/GZ6.jpg" />
                     </a>
 
-                    <a  href="images/img03.jpg" rel="zoom1" rev="images/img03.jpg">
-                        <img class="imgS" src="images/img03s.jpg" />
-                    </a> -->
                 </div>
                 <!-- 商品图片 -->
             </div>
@@ -179,8 +176,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['detail']['last']       = ($_
                         <li class="ind-item ind-sellCount canClick" id="evaluation1" data-label="用户评价">
                             <div class="indcon">
                                 <a href="#evaluation">
-                                    <span class="label" >用户评价</span>
-                                    <span class="count"><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productSales'];?>
+                                    <span class="label" >商品评价</span>
+                                    <span class="count"><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['commentCount'];?>
 </span>
                                 </a>
                             </div>
@@ -188,7 +185,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['detail']['last']       = ($_
 
                         <li class="ind-item ind-sellCount canClick" data-label="点赞次数">
                             <div class="indcon">
-                                <span class="label">点赞次数</span>
+                                <span class="label">商品点赞</span>
                                 <span class="count"><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productLove'];?>
 </span>
                             </div>
@@ -246,24 +243,30 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['detail']['last']       = ($_
     <!-- 自由搭配 -->
     <div id="J_SaleCombo" class="cxd-scombo" data-spm="1998099587">
         <div class="cxd-combo-inner">
+            <!-- 标题 -->
             <ul class="tab-nav tab-nav-combos">
                 <li class="selected">自由搭配</li>
             </ul>
+
             <div class="tab-content tab-content-combos">
               
                     <div class="tab-pannel tab-pannel-combos ziyou" data-comboid="2316400000171009138">
+                        <!-- 自由搭配的主商品 -->
                         <div class="tm-combo-mitem tm-combo-i36247161745">
                             <div class="tm-img">
                                 <a href="index.php?route=details&id=<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productId'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productName'];?>
 " target="_blank" title="" alt=""><img src="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['imgRootD'];?>
 ">
                                 </a>
                             </div>
 
                             <div class="selected"><i></i></div>
-                            <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s>240.00</s>
+                            <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productOldPrice'];?>
+</s>
                             </p> 
                         </div>
+                        <!-- 自由搭配的主商品 -->
 
                         <div class="tm-combo-spliter">+</div>
 
@@ -282,66 +285,58 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['detail']['last']       = ($_
 
                         <div class="tm-combo-items tab-content">
                             <div class="tab-content-groups">
-                                <div class="tab-content-pre">
-                                    <a href="javascript:a()" class="a-button a-icon a-icon-pre">
-                                        <!-- <span class="a-button-inner"> -->
-                                            <!-- <i class="a-icon a-icon-pre"></i> -->
-                                        <!-- </span> -->
-                                    </a>
-                                </div>
+                               <!--  <div class="tab-content-pre">
+                                    <a href="javascript:a()" class="a-button a-icon a-icon-pre"> -->
+                                       <!--  <span class="a-button-inner">
+                                            <i class="a-icon a-icon-pre"></i>
+                                        </span> -->
+                               <!--      </a>
+                                </div> -->
                                 <div class="tab-pannel tab-pannel-groups">
-
+                                    <!-- 提供选择的搭配 -->
                                     <div class="tm-combo-item tm-combo-i44346190723">  
                                         <div class="tm-img">
                                             <a href="index.php?route=details&id=<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productId'];?>
-" target="_blank" title="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油" alt="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油">
+" target="_blank" title="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productName'];?>
+">
                                             <img src="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['imgRootD'];?>
 ">
                                             </a>
                                         </div>
 
                                         <div class="tm-enable selected"><i></i></div>
-                                        <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s>89.00</s>
+                                        <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productNewPrice'];?>
+</s>
                                         </p>
                                     </div>
+                                    <!-- 提供选择的搭配 -->
 
-                                    <div class="tm-combo-item tm-combo-i44346190723">  
+                                    <!-- 提供选择的搭配 -->
+                                    <div class="tm-combo-item">  
                                         <div class="tm-img">
                                             <a href="index.php?route=details&id=<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productId'];?>
-" target="_blank" title="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油" alt="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油">
+" target="_blank" title="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productName'];?>
+">
                                             <img src="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['imgRootD'];?>
 ">
                                             </a>
                                         </div>
 
-                                        <div class="tm-enable"><i></i></div>
-                                        <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s>89.00</s>
+                                        <div class="tm-enable selected"><i></i></div>
+                                        <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s><?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productNewPrice'];?>
+</s>
                                         </p>
                                     </div>
-
-                                    <div class="tm-combo-item tm-combo-i44346190723">  
-                                        <div class="tm-img">
-                                            <a href="index.php?route=details&id=<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['productId'];?>
-" target="_blank" title="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油" alt="赤豪新西兰草饲生鲜S级新鲜团购原味西冷牛排180克送黄油">
-                                            <img src="<?php echo $_smarty_tpl->tpl_vars['Detail']->value[$_smarty_tpl->getVariable('smarty')->value['section']['detail']['index']]['imgRootD'];?>
-">
-                                            </a>
-                                        </div>
-
-                                        <div class="tm-enable"><i></i></div>
-                                        <p class="tm-original-price tm-clear">价格&nbsp;<i>¥</i><s>89.00</s>
-                                        </p>
-                                    </div>
-
+                                    <!-- 提供选择的搭配 -->
                                 </div>
 
-                                <div class="tab-content-next">
-                                    <a href="javascript:a()" class="a-button a-icon a-icon-next">
+                                <!-- <div class="tab-content-next"> -->
+                                    <!-- <a href="javascript:a()" class="a-button a-icon a-icon-next"> -->
                                         <!-- <span class="a-button-inner ">
                                             <i class="a-icon a-icon-next"></i>
                                         </span> -->
-                                    </a>
-                                </div>
+                                    <!-- </a> -->
+                                <!-- </div> -->
 
                             </div>
                         </div>

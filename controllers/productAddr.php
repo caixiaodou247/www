@@ -102,10 +102,10 @@
 	//通过商品id来获取其对应商品首页图片
 	if($row){
 		foreach ($row as $key => $value) {
-			$rows_Img = $admin->getImgsByKind($value['productId']);
+			$rows_Img = $admin->getImgsByKind($value['productId'] , "true");
 			// var_dump($rows_Img);
 			if($rows_Img){
-				$value['imgRoot'] = $rows_Img['imgRoot'] . "image_200_220/" . $rows_Img['imgName'];
+				$value['imgRoot'] = $rows_Img['imgRoot'] . "image_220_180/" . $rows_Img['imgName'];
 				//$value['imgName'] = $rows_Img[0]['imgName'];
 			}
 			

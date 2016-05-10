@@ -50,6 +50,9 @@ $(function() {
   }
   //封装getElemtByClassName函数
 
+  var showimg = document.getElementsByClassName('imgS');
+  var collocation = document.getElementsByClassName('tm-enable');
+
   amountNum = 1;
 
   var inc = document.getElementById('increase');
@@ -94,8 +97,26 @@ $(function() {
     amount.value = amountNum;
   }
 
-  var showimg = document.getElementsByClassName('imgS');
-  
+  //商品详情图片展示
+  // for(var i=0; i<collocation.length; ++i){
+
+  //   (function(){
+
+  //     var temp = i;
+
+  //     collocation[i].onclick = function(){
+
+  //       for(var j=0; j<collocation.length; ++j){
+  //         collocation[temp].style.background = '#E25850';
+  //         collocation[temp].style.border = '1px solid #E25850';
+  //       }  
+  //     }
+
+  //   })(); 
+
+  // };
+
+  //勾选搭配商品
   for(var i=0; i<showimg.length; ++i){
 
     (function(){

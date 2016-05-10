@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-05-10 15:41:18
+<?php /* Smarty version 3.1.24, created on 2016-05-10 01:47:41
          compiled from "C:/wamp5/www/views/tips.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:73235731909e584500_45354002%%*/
+/*%%SmartyHeaderCode:261815730cd3d2b16f8_53873873%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,20 +13,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '73235731909e584500_45354002',
+  'nocache_hash' => '261815730cd3d2b16f8_53873873',
   'variables' => 
   array (
     'tipsContents' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5731909f0f1f19_02208398',
+  'unifunc' => 'content_5730cd3d341814_63820071',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5731909f0f1f19_02208398')) {
-function content_5731909f0f1f19_02208398 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5730cd3d341814_63820071')) {
+function content_5730cd3d341814_63820071 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '73235731909e584500_45354002';
+$_smarty_tpl->properties['nocache_hash'] = '261815730cd3d2b16f8_53873873';
 ?>
 <tr id="tips-head">
     <td colspan="2" class="tips-head" align="left"><?php echo $_SESSION['tipsTitle'];?>
