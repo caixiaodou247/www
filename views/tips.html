@@ -1,0 +1,11 @@
+<tr id="tips-head">
+    <td colspan="2" class="tips-head" align="left">{$smarty.session.tipsTitle}</td>
+   
+</tr>
+ {if $tipsContents}  
+    {section name=content loop=$tipsContents} 
+        <tr>
+            <td class="tips" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$tipsContents[content]}</td>
+        </tr>
+    {/section}
+{/if}
