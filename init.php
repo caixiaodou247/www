@@ -88,6 +88,6 @@
 		$_SESSION['orderNum'] = 1 ;
 	}
 
-	//www
+	//new
 
 ?>
