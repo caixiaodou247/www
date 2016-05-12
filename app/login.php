@@ -26,7 +26,7 @@
 	}
 	header("Caikid-ResponseStatus:".$status);
 	$id = $user->getUserID($account);
-	$name = $user->getName($account);
+	$name = $user->getNameByPhone($account);
 
 	
 	$row = array('account'=>$account,'avatarUrl'=>'0','credit'=>0,'name'=>$name,'pwd'=>'','id'=>$id);

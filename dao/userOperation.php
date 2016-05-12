@@ -110,48 +110,7 @@
 				return false;
 			}
 		}
-		function getUserID($phNum){
-			$admin = new DB();
 
-			$sql_uSearch = "select userId  from users where userTel = ".$phNum;
-
-			$row = $admin->fetchOne($sql_uSearch);
-		
-			if($row){
-				return $row['userId'];
-			}
-			else{
-				return NULL;
-			}
- 		}
- 		function getPhone($userId){
-			$admin = new DB();
-
-			$sql_uSearch = "select userTel  from users where userId = ".$userId;
-
-			$row = $admin->fetchOne($sql_uSearch);
-		
-			if($row){
-				return $row['userTel'];
-			}
-			else{
-				return NULL;
-			}
- 		}
- 		 function getName($phNum){
-			$admin = new DB();
-
-			$sql_uSearch = "select userName  from users where userTel = ".$phNum;
-
-			$row = $admin->fetchOne($sql_uSearch);
-		
-			if($row){
-				return $row['userName'];
-			}
-			else{
-				return NULL;
-			}
- 		}
 
 		function userMakeOrder($order){
 			
@@ -328,13 +287,76 @@
 			}
 		}
 		
-//APP操作  order:price,sales; score;
+/**********************************************************************************************
+APP相关函数
+
+
+**********************************************************************************************/
+
+		function getUserID($phNum){
+			$admin = new DB();
+
+			$sql_uSearch = "select userId  from users where userTel = ".$phNum;
+
+			$row = $admin->fetchOne($sql_uSearch);
+		
+			if($row){
+				return $row['userId'];
+			}
+			else{
+				return NULL;
+			}
+ 		}
+ 		function getPhone($userId){
+			$admin = new DB();
+
+			$sql_uSearch = "select userTel  from users where userId = ".$userId;
+
+			$row = $admin->fetchOne($sql_uSearch);
+		
+			if($row){
+				return $row['userTel'];
+			}
+			else{
+				return NULL;
+			}
+ 		}
+ 		 function getNameByPhone($phNum){
+			$admin = new DB();
+
+			$sql_uSearch = "select userName from users where userTel = ".$phNum;
+			//echo $sql_uSearch;
+
+			$row = $admin->fetchOne($sql_uSearch);
+		
+			if($row){
+				return $row['userName'];
+			}
+			else{
+				return NULL;
+			}
+ 		}
+ 		function getNameByID($id){
+			$admin = new DB();
+
+			$sql_uSearch = "select userName from users where userId = ".$id;
+
+			$row = $admin->fetchOne($sql_uSearch);
+		
+			if($row){
+				return $row['userName'];
+			}
+			else{
+				return NULL;
+			}
+ 		}
 		function getProductId($type,$addr,$order){
 			$user_db=new DB();
 			if($type == "all"&&$addr == "all")
 				$sql = 'select productId from productkind';
 			if($type == "all"&&$addr !="all")
-				$sql='select productId from productkind where productAddr= "'.$addr.'"';
+				$sql='select productId from productkind where productAddr="'.$addr.'"';
+			
 			if($type != "all"&&$addr == "all")
 				$sql='select productId from productkind where productKind="'.$type.'"';
 			if($type != "all"&&$addr != "all")
@@ -350,16 +372,27 @@
 			}
 			if($order == "sales")
 			{
-				$sql_1 = 'select productId,productSales from productchange where productId in ('.$sql.') order by productSales ASC';
+				$sql_1 = 'select productId,productSales from productchange where productId in ('.$sql.') order by productSales DESC';
 				return $user_db->fetchAll($sql_1);
 			}
 			if($order = 'score')
 			{
-				$sql_1 = 'select productId,scoreAll/commentCount score from productchange where productId in ('.$sql.') order by score ASC';
+				$sql_1 = 'select productId,scoreAll/commentCount score from productchange where productId in ('.$sql.') order by score DESC';
 				return $user_db->fetchAll($sql_1);
 			}
 		}
 
+
+		function getAllAddr(){
+			$user_db = new DB();
+			$sql = "select * from addr";
+			return $user_db->fetchAll($sql);
+		}
+		function getAllType(){
+			$user_db = new DB();
+			$sql = "select * from type";
+			return $user_db->fetchAll($sql);
+		}
 		function getProductDetail($productId){
 			$admin = new DB();
 
@@ -368,7 +401,7 @@
 			//echo $row['imgRoot'];
 			if(!$row)
 				return false;
-			$imgPath = $row['imgRoot'].$row['imgName'];
+			$imgPath = $row['imgRoot']."image_200_220/".$row['imgName'];
 			//echo $imgPath;
 
 			$sql_productFlg = 'select productFlag from productstate where productId = '.$productId;
@@ -405,7 +438,17 @@
 			return $arr;
 		}
 
+		//获取评论
+		function getComment($productId){
+			$user_db=new DB();
+			$sql = 'select commentId,productId,userId,score,content,date from comments where productId ='.$productId.' order by date DESC';
+			$row = $user_db->fetchAll($sql);
+			return $row;
+		}
+		
 
+
+		// }
 
 
 

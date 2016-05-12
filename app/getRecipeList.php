@@ -50,9 +50,8 @@
 		{
 			if($i!=$page*10)
 				echo ',';
-			foreach ( $row as $key => $value ) {  
-        		$row[$key] = urlencode ( $value );  
-    }  
+			foreach ( $row as $key => $value )  
+        		$row[$key] = urlencode ( $value );    
 			echo urldecode(json_encode($row));
 		}
 	}
