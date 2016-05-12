@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-05-08 21:46:41
+<?php /* Smarty version 3.1.24, created on 2016-05-12 11:34:12
          compiled from "C:/wamp5/www/views/home.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:19873572f4341f1ea28_42954568%%*/
+/*%%SmartyHeaderCode:161905733f9b47c6960_53252592%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1fd7087ae7e1d41f65410b7b44abbae15d7af94b' => 
     array (
       0 => 'C:/wamp5/www/views/home.html',
-      1 => 1462588486,
+      1 => 1462955382,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19873572f4341f1ea28_42954568',
+  'nocache_hash' => '161905733f9b47c6960_53252592',
   'variables' => 
   array (
     'adverts' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_572f4342f31982_19353087',
+  'unifunc' => 'content_5733f9b5d34738_38257552',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_572f4342f31982_19353087')) {
-function content_572f4342f31982_19353087 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5733f9b5d34738_38257552')) {
+function content_5733f9b5d34738_38257552 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '19873572f4341f1ea28_42954568';
+$_smarty_tpl->properties['nocache_hash'] = '161905733f9b47c6960_53252592';
 echo $_smarty_tpl->getSubTemplate ("header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -663,7 +663,7 @@ echo $_SESSION['choosedAddr'];
                         </li>
 
                         <li>
-                          <a data-value="36362" href="#none" onclick="onclickMetro(36362 , '公元前地铁')">公元前地铁</a>
+                          <a data-value="36362" href="#none" onclick="onclickMetro(36362 , '公园前地铁')">公园前地铁</a>
                         </li>
 
                         <li>
@@ -947,13 +947,13 @@ echo $_SESSION['foodName'];
                             </li>
 
                             <li>
-                              <a href="#none" onclick="selectFoodName(3037 , '烧炖徽菜')">烧炖徽菜
+                              <a href="#none" onclick="selectFoodName(3037 , '清香鲁菜')">清香鲁菜
                               </a>
                               
                             </li>
 
                             <li>
-                              <a href="#none" onclick="selectFoodName(3038 , '烧炖徽菜')">烧炖徽菜
+                              <a href="#none" onclick="selectFoodName(3038 , '麻辣川菜')">麻辣川菜
                               </a>
                               
                             </li>                        

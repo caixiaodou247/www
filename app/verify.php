@@ -20,12 +20,12 @@
 	if(!$user->isRegister($phone)){
 		//echo "enter if";
 		$_SESSION['code']=$code;
-		$_SESSION['timeout']=time()+3600;
+		$_SESSION['timeout']=time()+120;
 		header("Caikid-ResponseStatus:ok");
-		require_once ('../ChuanglanSmsHelper/ChuanglanSmsApi.php');
-		$clapi  = new ChuanglanSmsApi();
-		$result = $clapi->sendSMS($phone, '您好，您的验证码是'.$code,'true');
-		$result = $clapi->execResult($result);
+		// require_once ('../ChuanglanSmsHelper/ChuanglanSmsApi.php');
+		// $clapi  = new ChuanglanSmsApi();
+		// $result = $clapi->sendSMS($phone, '您好，您的验证码是'.$code,'true');
+		// $result = $clapi->execResult($result);
 		echo $_SESSION['code'];
 	}
 	//$_SESSION['timeout']=time()+3600;

@@ -1,6 +1,6 @@
 <?php
 	include '../init.php';
-	if(isset($_SESSION['account']))
+	if(isset($_SESSION['userId']))
 	{
 		session_destroy();
 		header("Caikid-ResponseStatus:ok");

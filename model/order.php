@@ -5,6 +5,7 @@
 
 		public $orderNumber;		//订单编号
 		var $userPhone;				//用户取菜的电话号码(不一定是登录手机号)
+		var $userTel;               //下单用户账号
 		var $userName;				//用户取菜的用户名字
 		var $orderAmount;			//订单总价
 		var $orderDate;				//下订单日期

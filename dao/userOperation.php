@@ -161,7 +161,7 @@
 					}
 				}
 
-				return true;
+				return $orderId;
 			
 			}
 			
@@ -446,9 +446,25 @@ APP相关函数
 			return $row;
 		}
 		
-
-
-		// }
+		/**
+		 * 获取购物车总价
+		 * @param array $cart
+		 * @return number $price
+		 **/
+		function getTotalPrice($cart)
+		{
+			$user_db=new DB();
+			$length = count($cart);
+			$price = 0;
+			for($i = 0;$i<$length;$i++)
+			{
+				$sql = "select productNewPrice from products where productId ="
+				.$cart[$i]['id'];
+				$thisPrice = $user_db->fetchOne($sql);
+				$price += ($thisPrice['productNewPrice']*$cart[$i]['count']);
+			}
+			return $price;
+		}
 
 
 

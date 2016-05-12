@@ -7,24 +7,23 @@
 	$status='';
     //判断该用户账号是否已经注册
 	if( !( $user->isRegister($account) ) ){
-		$status='user-not-exist';
-		header("Caikid-ResponseStatus:".$status);
+		header("Caikid-ResponseStatus:user-not-exist");
 		echo 'null';
 		return;
 	}
 	$isSuccess=$user->userCheckLogin($account , $password);
 	if(!$isSuccess){
-		$status='pwd-error';
-		header("Caikid-ResponseStatus:".$status);
+		header("Caikid-ResponseStatus:pwd-error");
 		echo 'null';
 		return;
 	}
 	if($isSuccess){
-		$_SESSION['account']=$account;
+		$_SESSION['userId']=$user->getUserID($account);
 		$_SESSION['password']=$password;
 		$status='ok';
 	}
 	header("Caikid-ResponseStatus:".$status);
+	//echo $_SESSION['userId'];
 	$id = $user->getUserID($account);
 	$name = $user->getNameByPhone($account);
 
