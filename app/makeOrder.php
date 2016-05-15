@@ -33,7 +33,6 @@
 	获取请求的购物车数据 json 通过"php://input" 由于$_POST会对数据先进行urlencode，故不能直接用$_POST获取
 	-----------------------------------------------------------------------------*/
 
-	//echo date('Y-m-d H:i:s');
 	$in = urldecode(file_get_contents("php://input"));
 	$flag_from = "[";
 	$flag_to = "]";

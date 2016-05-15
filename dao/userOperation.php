@@ -153,6 +153,7 @@
 					$arr_pOrder['orderId'] = $orderId;
 					$arr_pOrder['productId'] = $arr_productId[$i];
 					$arr_pOrder['quantity'] = $arr_quantity[$i];
+					$arr_pOrder['isComment'] = "false";
 	
 					$bool_isSuccessP = $user_db->insert('order_product' , $arr_pOrder);
 
