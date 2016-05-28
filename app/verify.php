@@ -3,6 +3,12 @@
 	
  	//?
 	$phone=$_POST['account'];
+	if(!isset($_POST['isForget']))
+	{
+		$isForget = false;
+	}
+	else
+		$isForget = $_POST['isForget'];
 	
 
 	$code =rand(1000,9999);
@@ -12,15 +18,15 @@
 
 	$status = '';
 
-	if($user->isRegister($phone)){
+	if($isForget == false&&$user->isRegister($phone)){
 		header("Caikid-ResponseStatus:account-registred"); 
 		echo 'null';
 		return;
 	}
-	if(!$user->isRegister($phone)){
-		//echo "enter if";
+	else{
+
 		$_SESSION['code']=$code;
-		$_SESSION['timeout']=time()+120;
+		$_SESSION['timeout']=time()+3600;
 		header("Caikid-ResponseStatus:ok");
 		// require_once ('../ChuanglanSmsHelper/ChuanglanSmsApi.php');
 		// $clapi  = new ChuanglanSmsApi();
@@ -28,5 +34,4 @@
 		// $result = $clapi->execResult($result);
 		echo $_SESSION['code'];
 	}
-	//$_SESSION['timeout']=time()+3600;
 ?>

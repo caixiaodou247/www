@@ -30,7 +30,7 @@
 	require('model/order.php');
 	require('model/product.php');
 	require('model/user.php');
-
+	require('model/comments.php');
 	require('dao/admin.php');
 	require('dao/userOperation.php');
 	require('dao/CartTool.php');

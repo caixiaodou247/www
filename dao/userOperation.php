@@ -468,7 +468,111 @@ APP相关函数
 		}
 
 
+		function getOrderById($id){
+			$user_db=new DB();
+			$sql = "select * from orders where orderId =".$id;
+			return $user_db->fetchOne($sql);
+		}
 
+		function getOrderDetail($id){
+			$user_db=new DB();
+			$sql = "select productId,quantity as amount,isComment from order_product where orderId =".$id;
+			return $user_db->fetchAll($sql);
+		}
+
+		function getOrderList($userId,$orderBy){
+			$user_db = new DB();
+			$userTel = $this->getPhone($userId);
+			$sql_1 = "select orderId from user_order where userTel = ".$userTel;
+			if($orderBy == 'date'){
+				$sql = 'select orderId from orders where orderId in ('.$sql_1.') order by orderDate DESC';
+			}
+
+			else
+				$sql = 'select orderId from orders where orderId in ('.$sql_1.') order by orderFlag';
+			return $user_db->fetchAll($sql);
+		}
+
+
+		function pay($orderId){
+			$user_db = new DB();
+			$arr = array('orderFlag'=>'待取菜');
+
+			$isMOdify = $user_db->update('orders',$arr,'orderId ='.$orderId);
+			if(!$isMOdify)
+				return false;
+			return true;
+		}
+
+		function confirmOrder($orderId){
+			$user_db = new DB();
+			$arr = array('orderFlag'=>'已完成');
+
+			$isMOdify = $user_db->update('orders',$arr,'orderId ='.$orderId);
+			if(!$isMOdify)
+				return false;
+			return true;
+		}
+		function cancelOrder($orderId){
+			$user_db = new DB();
+			$orderDetail = $this->getOrderById($orderId);
+			if($orderDetail['orderFlag']!='待付款')
+				return false;
+			$arr = array('orderFlag'=>'已取消');
+
+			$isMOdify = $user_db->update('orders',$arr,'orderId ='.$orderId);
+			if(!$isMOdify)
+				return false;
+			return true;
+		}
+		
+		function comment($comments){
+			$user_db = new DB();
+			$orderDetail = $this->getOrderDetail($comments->orderId);
+
+			$count = count($orderDetail);
+			for($i=0;$i<$count;$i++)
+			{
+				if($orderDetail[$i]['productId'] == $comments->productId){
+					if($orderDetail[$i]['isComment']== 'true')
+						return false;
+					else
+						break;
+				}
+			}
+
+
+			$orderF = $this->getOrderById($comments->orderId);
+			if($orderF['orderFlag']!='已完成')
+				return false;
+
+
+			$arrComment['orderId']=$comments->orderId;
+			$arrComment['productId']=$comments->productId;
+			$arrComment['content']=$comments->content;
+			$arrComment['userId']=$comments->userId;
+			$arrComment['date']=$comments->date;
+			$arrComment['score']=$comments->score;
+			$commentId = $user_db->insert('comments' , $arrComment);
+
+			if(!$commentId)
+				return false;
+			$arr = array('isComment'=>'true');
+			$isModify = $user_db->update('order_product',$arr,"orderId ='$comments->orderId' and productId = '$comments->productId'");
+			if(!$isModify)
+				return false;
+			return true;
+		}
+
+		function forgetPass($phone,$password){
+			$user_db = new DB();
+			$arr['userPassword']=$password;
+			$isModify = $user_db->update('users',$arr,"userTel = '$phone'");
+			if(!$isModify)
+				return false;
+			return true;
+
+		}
 }
 
 ?>
