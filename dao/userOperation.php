@@ -212,7 +212,7 @@
 
 						foreach ($arr_orderPro as $key => $value) {
 
-							$rows_Img = $order_admin->getImgsByKind($value['productId'],"cooked");
+							$rows_Img = $order_admin->getImgsByKind($value['productId'],"true");
 							// var_dump($rows_Img); echo "</br>";
 							if($rows_Img){
 							$value['imgRootS'] = $rows_Img['imgRoot'] . "image_80_80/" . $rows_Img['imgName'];

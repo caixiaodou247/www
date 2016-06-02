@@ -29,7 +29,8 @@
  */
 require_once 'ChuanglanSmsHelper/ChuanglanSmsApi.php';
  $phone=$_GET['phoneNum'];
- $code =rand(1000,9999);
+ //$code =rand(1000,9999);
+ $code = '3145';
  $_SESSION[$phone]=$code;
 $clapi  = new ChuanglanSmsApi();
 $result = $clapi->sendSMS($phone, '您好，您的验证码是'.$code,'true');

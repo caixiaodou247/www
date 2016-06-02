@@ -32,9 +32,10 @@
 	// var_dump($myCart);
 	//var_dump($rows);
 	if(isset($myCart)){
+		$isHome = 'true';
 
 		foreach ($myCart as $key => $value) {
-			$rows_Img = $admin->getImgsByKind($value['productId']);
+			$rows_Img = $admin->getImgsByKind($value['productId'],$isHome);
 			$rows_Img['imgRoot'] = $rows_Img['imgRoot'] . 'image_80_80/';
 			// var_dump($rows_Img);
 			if($rows_Img){

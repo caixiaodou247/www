@@ -17,10 +17,10 @@ $chuanglan_config['api_send_url'] = 'http://222.73.117.156/msg/HttpBatchSendSM';
 $chuanglan_config['api_balance_query_url'] = 'http://222.73.117.156/msg/QueryBalance';
 
 //创蓝账号 替换成你自己的账号
-$chuanglan_config['api_account']	= 'jiekou-clcs-03';
+$chuanglan_config['api_account']	= 'N3355965';
 
 //创蓝密码 替换成你自己的密码
-$chuanglan_config['api_password']	= 'Admin888';
+$chuanglan_config['api_password']	= '63619557';
 
 //↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 ?>

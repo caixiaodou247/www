@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-05-11 01:52:02
+<?php /* Smarty version 3.1.24, created on 2016-06-01 15:15:30
          compiled from "C:/wamp5/www/views/header.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:440657321fc29ba9f7_81219041%%*/
+/*%%SmartyHeaderCode:16631574e8b9216e4f9_80678642%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ac6507f8e769cc1d3b608a050575b0b91809e05b' => 
     array (
       0 => 'C:/wamp5/www/views/header.html',
-      1 => 1462815996,
+      1 => 1464765326,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '440657321fc29ba9f7_81219041',
+  'nocache_hash' => '16631574e8b9216e4f9_80678642',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_57321fc2e603b3_51221125',
+  'unifunc' => 'content_574e8b92255a84_61272971',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_57321fc2e603b3_51221125')) {
-function content_57321fc2e603b3_51221125 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_574e8b92255a84_61272971')) {
+function content_574e8b92255a84_61272971 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '440657321fc29ba9f7_81219041';
+$_smarty_tpl->properties['nocache_hash'] = '16631574e8b9216e4f9_80678642';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -64,6 +64,7 @@ $_smarty_tpl->properties['nocache_hash'] = '440657321fc29ba9f7_81219041';
               <a id="login" href="index.php?route=member">
                 <span id="nameB" ><?php echo $_SESSION['userName'];?>
 </span>
+                <a id="logout" href="index.php?route=loginout">|注销</a>
               </a>
             </li>
 
